@@ -1,8 +1,3 @@
-/**
- * Mapa de nomes de processo -> nome amigável exibido no site.
- * Processos que não estiverem aqui aparecem com o próprio nome
- * do executável (fallback), nunca somem da tela.
- */
 export const FRIENDLY_NAMES = {
   'code.exe': 'Visual Studio Code',
   'chrome.exe': 'Google Chrome',
