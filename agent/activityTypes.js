@@ -1,18 +1,3 @@
-/**
- * ActivityTypes
- * ------------------------------------------------------------
- * Classifica o processo detectado (real, vindo do windowDetector)
- * em um "activityType" — a mesma ideia do FRIENDLY_NAMES em
- * appNames.js, só que para categoria em vez de nome de exibição.
- *
- * Isso NÃO inventa nenhuma atividade: só rotula o processo que o
- * sistema operacional já informou de verdade. Se o processo não
- * estiver no mapa, cai em "default" (fallback já suportado pelo
- * frontend).
- *
- * Para adicionar suporte a mais apps/jogos, basta incluir a entrada
- * aqui (chave = nome do processo em minúsculas, com .exe).
- */
 export const ACTIVITY_TYPE_BY_PROCESS = {
   // música
   'spotify.exe': 'music',
