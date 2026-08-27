@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Presence em tempo real">
+
+  <title>Matheus — Presence</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main
+    class="presence-card"
+    id="card"
+    data-status="offline"
+    aria-live="polite"
+  >
+
+    <div class="ambient-glow"></div>
+    <div class="noise"></div>
+
+    <!-- HEADER -->
+    <header class="card-header">
+
+      <div class="brand">
+        <span class="brand-indicator"></span>
+        <span>PRESENCE</span>
+      </div>
+
+      <div class="status" id="status-pill">
+        <span class="status-dot" id="status-dot"></span>
+        <span id="status-label">OFFLINE</span>
+      </div>
+
+    </header>
+
+
+    <!-- USER -->
+    <section class="user">
+
+      <h1>MATHEUS</h1>
+
+      <span class="user-subtitle">
+        Real-time activity
+      </span>
+
+    </section>
+
+
+    <!-- ACTIVITY -->
+    <section class="activity" id="activity-section">
+
+      <div class="app-icon-wrapper" id="avatar-ring">
+
+        <div class="app-icon">
+
+          <img
+            id="avatar-img"
+            class="app-icon-image"
+            alt=""
+            hidden
+          >
+
+          <span
+            id="avatar-fallback"
+            class="app-icon-fallback"
+          >
+            —
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="activity-content">
+
+        <span class="activity-label" id="activity-label">
+          ATIVO
+        </span>
+
+        <p
+          class="activity-name"
+          id="activity-name"
+        >
+          Sem atividade
+        </p>
+
+        <p
+          class="activity-details"
+          id="activity-details"
+        >
+          —
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROGRESS (só aparece quando o backend envia progress real) -->
+    <section
+      class="activity-progress"
+      id="progress-section"
+      hidden
+    >
+
+      <div class="progress-track">
+        <div
+          class="progress-fill"
+          id="progress-fill"
+        ></div>
+      </div>
+
+      <div class="progress-times">
+        <span id="progress-current">00:00</span>
+        <span id="progress-total">00:00</span>
+      </div>
+
+    </section>
+
+
+    <!-- TIMER -->
+    <section
+      class="session"
+      id="timer-section"
+      hidden
+    >
+
+      <div class="session-info">
+
+        <span class="session-label">
+          SESSION
+        </span>
+
+        <span class="session-status">
+          ACTIVE
+        </span>
+
+      </div>
+
+      <time
+        class="timer"
+        id="timer"
+      >
+        00:00:00
+      </time>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="card-footer">
+
+      <div class="connection">
+
+        <span
+          class="connection-dot"
+          id="conn-dot"
+        ></span>
+
+        <span id="connection-text">
+          Conectando
+        </span>
+
+      </div>
+
+      <span
+        class="last-update"
+        id="last-update"
+      >
+        aguardando conexão…
+      </span>
+
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

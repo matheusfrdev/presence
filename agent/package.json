@@ -1,0 +1,14 @@
+{
+  "name": "real-time-presence-agent",
+  "version": "1.0.0",
+  "description": "Agente que roda no Windows, detecta a janela ativa em tempo real e envia para o servidor via WebSocket.",
+  "main": "agent.js",
+  "type": "module",
+  "scripts": {
+    "start": "node agent.js"
+  },
+  "dependencies": {
+    "active-win": "^8.2.1",
+    "ws": "^8.18.0"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "serverUrl": "ws://localhost:8080/agent",
+  "pollIntervalMs": 2000,
+  "hideWindowTitle": false
+}

@@ -1,0 +1,5 @@
+node_modules/
+
+# Cache local de ícones do Agent — específico da sua máquina,
+# não precisa (e não deve) ir pro repositório.
+agent/.cache/
