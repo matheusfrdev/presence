@@ -1,15 +1,3 @@
-/**
- * IconExtractor
- * ------------------------------------------------------------
- * Extrai o ícone real de um executável do Windows chamando o
- * script extract-icon.ps1 (System.Drawing, nativo do Windows —
- * sem dependência de compilação nativa no npm install).
- *
- * Resultado fica em cache (memória + disco) por caminho de exe,
- * porque chamar o PowerShell tem um custo perceptível e o mesmo
- * aplicativo costuma reaparecer várias vezes numa sessão.
- */
-
 import { execFile } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
