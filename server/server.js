@@ -1,11 +1,8 @@
 /**
- * Real-Time Presence — Servidor
+ * MATHEUS GOSTOSO 🥵🥵
  * ------------------------------------------------------------
  * Recebe a presença detectada de verdade pelo Agent (conectado em
  * /agent) e retransmite em tempo real para o site (conectado em /view).
- *
- * Sem banco de dados. Sem autenticação. Sem API REST.
- * Estado só em memória.
  */
 
 const http = require('http');
@@ -13,7 +10,6 @@ const { WebSocketServer } = require('ws');
 
 const PORT = process.env.PORT || 8080;
 
-// Estado atual, guardado apenas em memória.
 let currentState = {
   status: 'offline',
   application: '',
@@ -82,8 +78,6 @@ agentWSS.on('connection', (ws) => {
       return;
     }
 
-    // Heartbeat "silencioso": o agent pode mandar {type: "heartbeat"}
-    // sem mudar o estado, só para manter a conexão viva.
     if (data.type === 'heartbeat') {
       return;
     }
@@ -92,9 +86,6 @@ agentWSS.on('connection', (ws) => {
       status: data.status ?? 'online',
       application: data.application ?? '',
       process: data.process ?? '',
-      // Campos novos — se o agent ainda mandar o formato antigo (sem
-      // activityType/details/state/progress), cai nos defaults abaixo
-      // e o frontend continua funcionando normalmente.
       activityType: data.activityType ?? 'default',
       details: data.details ?? '',
       state: data.state ?? '',
@@ -173,7 +164,6 @@ function broadcastState() {
   }
 }
 
-// Heartbeat: detecta conexões mortas dos viewers.
 const HEARTBEAT_MS = 30000;
 setInterval(() => {
   for (const viewer of viewers) {
