@@ -1,15 +1,3 @@
-/**
- * WindowDetector
- * ------------------------------------------------------------
- * Único detector implementado por enquanto. Pergunta ao Windows,
- * de verdade, qual é a janela em primeiro plano (via `active-win`,
- * que usa APIs nativas do sistema — nada de dados simulados).
- *
- * Contrato de saída, usado por qualquer detector futuro
- * (SpotifyDetector, GameDetector, etc.):
- *   { processName: string, windowTitle: string, exePath: string } | null
- */
-
 import activeWin from 'active-win';
 
 function normalizeProcessName(rawName) {
