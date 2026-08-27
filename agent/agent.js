@@ -1,25 +1,3 @@
-/**
- * Real-Time Presence — Agent
- * ------------------------------------------------------------
- * Roda no seu PC (Windows), pergunta ao sistema, de tempos em
- * tempos, qual é a janela em primeiro plano de verdade — sem
- * simulação, sem digitação manual — e envia para o servidor
- * apenas quando algo realmente muda.
- *
- * Nota sobre a interface: em vez de um ícone completo na bandeja
- * do sistema (que exigiria um empacotador tipo Electron só para
- * isso), esta primeira versão roda como um processo de console
- * que imprime o status atual — mesma informação do mockup de
- * tray, só que no terminal. Isso mantém a detecção (a parte que
- * realmente importa) simples e confiável. Um ícone de bandeja de
- * verdade é um bom próximo passo depois que a detecção estiver
- * validada.
- *
- * Uso:
- *   npm install
- *   npm start
- */
-
 import WebSocket from 'ws';
 import fs from 'node:fs';
 import path from 'node:path';
